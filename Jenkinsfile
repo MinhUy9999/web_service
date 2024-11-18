@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'baitap2-image'
+        DOCKER_IMAGE = 'minhuy19999/baitap2-image'
         DOCKER_TAG = 'latest'
     }
 
@@ -45,7 +45,7 @@ pipeline {
                 sh 'docker network create dev || echo "this network exists"'
                 sh 'echo y | docker container prune '
 
-                sh 'docker container run -d --rm --name server-golang -p 4000:3000 --network dev baitap2-image:latest'
+                sh 'docker container run -d --rm --name server-golang -p 4000:3000 --network dev minhuy19999/baitap2-image:latest'
             }
         }
     }
