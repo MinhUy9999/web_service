@@ -16,8 +16,6 @@ RUN go build -o main .
 # Tạo một lightweight container để chạy ứng dụng
 FROM debian:bullseye-slim
 
-# Cài đặt các công cụ cơ bản nếu cần (tùy chọn)
-RUN apt-get update && apt-get install -y ca-certificates && update-ca-certificates
 
 # Thư mục làm việc
 WORKDIR /root/
